@@ -1,0 +1,20 @@
+{
+  "name": "nzch",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "compile:linux": "bun build ./index.ts --compile --minify --sourcemap --bytecode --target=bun-linux-x64-modern --outfile nzch",
+    "compile:windows": "bun build --compile --minify --sourcemap --bytecode ./index.ts --target=bun-win-x64-modern --outfile nzch.exe"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/listr": "^0.14.9"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "listr": "^0.14.3",
+    "yocto-spinner": "^1.0.0"
+  }
+}

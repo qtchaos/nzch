@@ -1,0 +1,32 @@
+name: Build Binaries
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Install Bun
+        run: |
+          curl -fsSL https://bun.sh/install | bash
+          export PATH="$HOME/.bun/bin:$PATH"
+      - name: Build Linux binary
+        run: bun run compile:linux
+      - name: Build Windows binary
+        run: bun run compile:windows
+      - name: Upload Linux binary
+        uses: actions/upload-artifact@v4
+        with:
+          name: nzch-linux
+          path: nzch
+      - name: Upload Windows binary
+        uses: actions/upload-artifact@v4
+        with:
+          name: nzch-windows
+          path: nzch.exe
