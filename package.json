@@ -14,8 +14,8 @@
     "typescript": "^5"
   },
   "dependencies": {
-    "listr": "^0.14.3",
-    "rxjs": "^7.8.2",
-    "yocto-spinner": "^1.0.0"
+    "listr2": "^9.0.3",
+    "yocto-spinner": "^1.0.0",
+    "zen-observable": "^0.10.0"
   }
 }

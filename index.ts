@@ -3,9 +3,7 @@
 import { Squid, type RootObject } from "./squid";
 import { mkdir } from "node:fs/promises";
 import yoctoSpinner from 'yocto-spinner';
-import Listr from 'listr';
-// @ts-ignore
-import { race } from "rxjs";
+import { Listr } from 'listr2';
 
 async function downloadAndSave(url: string, filePath: string) {
     const res = await fetch(url);
